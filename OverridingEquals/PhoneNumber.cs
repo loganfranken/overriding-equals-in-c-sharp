@@ -41,7 +41,17 @@ namespace OverridingEquals
 
         public static bool operator ==(PhoneNumber numberA, PhoneNumber numberB)
         {
-            return (Object.ReferenceEquals(numberA, numberB) || numberA.Equals(numberB));
+            if (Object.ReferenceEquals(numberA, numberB))
+            {
+                return true;
+            }
+
+            if(Object.ReferenceEquals(null, numberA))
+            {
+                return false;
+            }
+
+            return (numberA.Equals(numberB));
         }
 
         public static bool operator !=(PhoneNumber numberA, PhoneNumber numberB)

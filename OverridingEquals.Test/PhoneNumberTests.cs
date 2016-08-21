@@ -67,5 +67,14 @@ namespace OverridingEquals.Test
 
             Assert.IsTrue(phoneNumberA == phoneNumberB);
         }
+
+        [TestMethod]
+        public void NullReferenceEquality()
+        {
+            PhoneNumber phoneNumberA = null;
+            PhoneNumber phoneNumberB = new PhoneNumber();
+
+            Assert.IsFalse(phoneNumberA == phoneNumberB); // Throws an exception
+        }
     }
 }
